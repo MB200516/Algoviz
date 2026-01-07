@@ -9,12 +9,15 @@ import { Play, Download, Copy, Check } from 'lucide-react';
 import axios from 'axios';
 import toast from 'react-hot-toast';
 import './CodeEditor.css';
+import { API_URL } from '../config';
+
 
 const CodeEditor = ({ initialCode = '', language = 'python' }) => {
   const [code, setCode] = useState(initialCode);
   const [output, setOutput] = useState('');
   const [isRunning, setIsRunning] = useState(false);
   const [copied, setCopied] = useState(false);
+
 
   const languageExtensions = {
     python: python(),
@@ -27,7 +30,7 @@ const CodeEditor = ({ initialCode = '', language = 'python' }) => {
     setOutput('Running...');
     
     try {
-      const response = await axios.post('http://localhost:5000/api/code/execute', {
+      const response = await axios.post(`${API_URL}/code/execute`, {
         code,
         language,
       });

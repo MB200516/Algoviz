@@ -12,7 +12,11 @@ const app = express();
 //connectDB();
 
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: [
+    'http://localhost:3000',
+    'https://algoviz-cyan.vercel.app/',  
+    'https://*.vercel.app'          
+  ],
   credentials: true,
 }));
 
