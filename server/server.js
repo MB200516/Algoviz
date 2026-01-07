@@ -9,7 +9,7 @@ dotenv.config();
 
 const app = express();
 
-connectDB();
+//connectDB();
 
 app.use(cors({
   origin: 'http://localhost:3000',
