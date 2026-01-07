@@ -12,7 +12,7 @@ const app = express();
 //connectDB();
 
 app.use(cors({
-  origin: '*',  // Allow all origins (not recommended for production)
+  origin: '*', 
   credentials: false
 }));
 
