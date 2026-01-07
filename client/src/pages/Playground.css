@@ -1,0 +1,115 @@
+.playground-page {
+  padding: 6rem 2rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.playground-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.playground-content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.language-selector {
+  padding: 2rem;
+}
+
+.language-selector h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.editor-section {
+  width: 100%;
+}
+
+.playground-tips {
+  padding: 2rem;
+}
+
+.playground-tips h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.playground-tips ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.playground-tips li {
+  padding-left: 1.5rem;
+  position: relative;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.playground-tips li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.example-algorithms {
+  padding: 2rem;
+}
+
+.example-algorithms h3 {
+  font-size: 1.3rem;
+  margin-bottom: 1.5rem;
+  color: var(--text-primary);
+}
+
+.example-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.example-card {
+  padding: 1.5rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.example-card:hover {
+  background: var(--bg-secondary);
+  border-color: var(--color-primary);
+  transform: translateY(-5px);
+}
+
+.example-card h4 {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-primary);
+}
+
+.example-card p {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+@media (max-width: 768px) {
+  .playground-page {
+    padding: 5rem 1rem 2rem;
+  }
+
+  .example-grid {
+    grid-template-columns: 1fr;
+  }
+}

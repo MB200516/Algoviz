@@ -1,0 +1,104 @@
+.visualizer-container {
+  width: 100%;
+  padding: 2rem;
+}
+
+.array-container {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 400px;
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.array-bar {
+  flex: 1;
+  max-width: 60px;
+  background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.5rem;
+  position: relative;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.array-bar.comparing {
+  background: linear-gradient(180deg, var(--color-warning), var(--color-secondary));
+  box-shadow: 0 4px 20px rgba(245, 158, 11, 0.6);
+  transform: translateY(-10px);
+}
+
+.array-bar.sorted {
+  background: linear-gradient(180deg, var(--color-success), #059669);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.6);
+}
+
+.array-bar.pivot {
+  background: linear-gradient(180deg, #8b5cf6, #6366f1);
+  box-shadow: 0 4px 20px rgba(139, 92, 246, 0.8);
+  transform: translateY(-15px);
+}
+
+.array-bar.merging {
+  background: linear-gradient(180deg, #ec4899, #f472b6);
+  box-shadow: 0 4px 20px rgba(236, 72, 153, 0.6);
+  opacity: 0.8;
+}
+
+.bar-value {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: white;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.visualizer-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-tertiary);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.control-btn {
+  padding: 0.75rem 2rem;
+  background: var(--gradient-luxury);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  color: white;
+  box-shadow: var(--shadow-md);
+}
+
+.step-counter {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-family: 'Orbitron', sans-serif;
+}
+
+@media (max-width: 768px) {
+  .array-container {
+    height: 300px;
+    gap: 0.25rem;
+  }
+
+  .array-bar {
+    max-width: 40px;
+  }
+
+  .bar-value {
+    font-size: 0.75rem;
+  }
+}

@@ -1,0 +1,317 @@
+.graph-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.graph-edge {
+  stroke: var(--border-color);
+  stroke-width: 2;
+  transition: all 0.3s ease;
+}
+
+.graph-edge.active {
+  stroke: var(--color-warning);
+  stroke-width: 4;
+  filter: drop-shadow(0 0 8px var(--color-warning));
+}
+
+.graph-edge.visited {
+  stroke: var(--color-success);
+  stroke-width: 3;
+}
+
+.graph-node {
+  fill: var(--bg-tertiary);
+  stroke: var(--border-color);
+  stroke-width: 2;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.graph-node.visiting {
+  fill: var(--color-warning);
+  stroke: var(--color-warning);
+  filter: drop-shadow(0 0 12px var(--color-warning));
+  animation: pulse-node 1s infinite;
+}
+
+.graph-node.visited {
+  fill: var(--color-success);
+  stroke: var(--color-success);
+}
+
+.graph-node.queued {
+  fill: var(--color-primary);
+  stroke: var(--color-primary);
+}
+
+@keyframes pulse-node {
+  0%, 100% {
+    r: 25;
+  }
+  50% {
+    r: 28;
+  }
+}
+
+.node-label {
+  fill: var(--text-primary);
+  font-size: 16px;
+  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
+  pointer-events: none;
+}
+
+.queue-display, .stack-display {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.queue-display h3, .stack-display h3 {
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.queue-items, .stack-items {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  min-height: 60px;
+  align-items: center;
+}
+
+.queue-item, .stack-item {
+  padding: 0.75rem 1.5rem;
+  background: var(--gradient-luxury);
+  border-radius: 8px;
+  color: white;
+  font-weight: 600;
+  font-family: 'Orbitron', sans-serif;
+  box-shadow: var(--shadow-md);
+}
+
+.empty-queue, .empty-stack {
+  color: var(--text-muted);
+  font-style: italic;
+}
+
+.data-structure-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  background: var(--bg-secondary);
+  border-radius: var(--border-radius);
+  border: 1px solid var(--border-color);
+}
+
+.ds-controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.ds-input {
+  padding: 0.75rem 1.5rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  color: var(--text-primary);
+  font-size: 1rem;
+  width: 120px;
+}
+
+.ds-input:focus {
+  outline: none;
+  border-color: var(--color-primary);
+}
+
+.ds-button {
+  padding: 0.75rem 1.5rem;
+  background: var(--gradient-luxury);
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  box-shadow: var(--shadow-md);
+  transition: all 0.3s ease;
+}
+
+.ds-button:hover {
+  box-shadow: var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.ds-visualization {
+  width: 100%;
+  min-height: 300px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 2rem;
+  background: var(--bg-primary);
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.ds-element {
+  padding: 1.5rem 2rem;
+  background: var(--gradient-primary);
+  border-radius: 12px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.5rem;
+  font-family: 'Orbitron', sans-serif;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.ds-element.highlighted {
+  background: var(--gradient-secondary);
+  box-shadow: var(--shadow-glow);
+  animation: highlight-pulse 1s infinite;
+}
+
+@keyframes highlight-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+}
+
+.ds-info {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 600px;
+}
+
+.ds-info p {
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+}
+
+.ds-info strong {
+  color: var(--text-primary);
+}
+
+.edge-weight {
+  pointer-events: none;
+}
+
+.distance-label {
+  pointer-events: none;
+}
+
+.dijkstra-info {
+  margin-top: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.info-section {
+  padding: 1.5rem;
+  background: var(--bg-tertiary);
+  border-radius: 12px;
+}
+
+.info-section h3 {
+  color: var(--text-secondary);
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.distances-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  gap: 1rem;
+}
+
+.distance-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+}
+
+.node-name {
+  font-weight: 600;
+  color: var(--text-primary);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.distance-value {
+  padding: 0.25rem 0.75rem;
+  background: var(--gradient-luxury);
+  color: white;
+  border-radius: 6px;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 600;
+}
+
+.path-display {
+  padding: 1rem;
+  background: var(--bg-secondary);
+  border-radius: 8px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--color-primary);
+  font-family: 'Orbitron', sans-serif;
+  text-align: center;
+}
+
+.path-length {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--color-success);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .graph-container svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .queue-display, .stack-display {
+    width: 100%;
+  }
+
+  .ds-controls {
+    width: 100%;
+  }
+
+  .ds-input, .ds-button {
+    flex: 1;
+    min-width: 120px;
+  }
+}
