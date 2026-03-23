@@ -1,4 +1,4 @@
-# DSA Nexus - Algorithm Visualizer
+# AlgoVIz - Algorithm Visualizer
 
 A production-level Data Structures and Algorithms visualizer with real-time code execution, modern UI, and comprehensive learning features.
 
