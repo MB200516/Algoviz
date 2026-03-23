@@ -38,9 +38,9 @@ const Home = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.8 }}
           >
-            Visualize Algorithms <span className="gradient-text">Beautifully</span>
+            Visualize Algorithms <span className="gradient-text">Learn Faster, Code Better</span>
             <br />
-            Learn Faster, Code Better
+            
           </motion.h1>
 
           <motion.p
